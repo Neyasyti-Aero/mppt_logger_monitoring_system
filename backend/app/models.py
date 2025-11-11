@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey, Enum
+from sqlalchemy import Boolean, Column, Integer, String, Float, DateTime, ForeignKey, Enum
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql import func
 
@@ -26,4 +26,6 @@ class LoggerData(Base):
     current = Column(Float, nullable=False)
     power = Column(Float, nullable=False)
     illuminance = Column(Float, nullable=False)
+    isMaxPoint = Column(Boolean, default=False)
+    chunkName = Column(String(255), nullable=True)
     timestamp = Column(DateTime(timezone=True), server_default=func.now())

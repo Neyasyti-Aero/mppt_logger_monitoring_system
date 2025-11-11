@@ -42,6 +42,8 @@ class LoggerDataCreate(BaseModel):
     current: float
     power: float
     illuminance: float
+    isMaxPoint: Optional[bool] = False
+    chunkName: Optional[str] = "default_chunk"
 
 class LoggerDataBatch(BaseModel):
     data: List[LoggerDataCreate]
@@ -51,6 +53,8 @@ class LoggerDataOut(BaseModel):
     current: float
     power: float
     illuminance: float
+    isMaxPoint: bool
+    chunkName: Optional[str] = None
     timestamp: datetime
 
     class Config:

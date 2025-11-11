@@ -88,7 +88,9 @@ async def create_logger_data(db: AsyncSession, data: LoggerDataCreate):
         voltage=data.voltage,
         current=data.current,
         power=data.power,
-        illuminance=data.illuminance
+        illuminance=data.illuminance,
+        isMaxPoint=data.isMaxPoint,
+        chunkName=data.chunkName
     )
     db.add(db_data)
     await db.commit()

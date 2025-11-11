@@ -22,6 +22,8 @@ CREATE TABLE IF NOT EXISTS logger_data (
     current FLOAT NOT NULL,
     power FLOAT NOT NULL,
     illuminance FLOAT NOT NULL,
+    isMaxPoint BOOLEAN DEFAULT FALSE,
+    chunkName VARCHAR(255) NULL,
     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (logger_id) REFERENCES loggers(id) ON DELETE CASCADE
 );
